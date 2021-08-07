@@ -28,7 +28,7 @@ endpoints.put('/update-venda/:id', async (req: Request, res: Response) => {
     const venda = req.body;
     const updatedVenda = await prisma.vendas.update({
       where: {
-        id: id
+        id
       },
       data: venda
     });
@@ -43,7 +43,7 @@ endpoints.delete('/delete-venda/:id', async (req:Request, res: Response) => {
     const id = Number(req.params.id);
     await prisma.vendas.delete({
       where: {
-        id: id
+        id
       }
     });
     res.status(204).send();
