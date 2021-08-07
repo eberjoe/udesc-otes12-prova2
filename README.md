@@ -1,7 +1,7 @@
 # Prova 2
 ![img](readme-img/enunciado.png)
 
-1. Um projeto em Node.js foi inicializadom com o comando ```npm init```.
+1. Um projeto em Node.js foi inicializa com com o comando ```npm init```.
 
 2. Tendo o gerenciador de dependências Yarn já instalado globalmente, o *framework* Express foi instalado com o comando ```yarn add express```.
 
