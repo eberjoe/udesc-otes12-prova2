@@ -1,2 +1,2 @@
 # Prova 2
-[img](readme-img/enunciado.png)
+![img](readme-img/enunciado.png)
