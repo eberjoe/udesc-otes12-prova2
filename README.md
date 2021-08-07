@@ -23,7 +23,7 @@ Foram implementados os seguintes *endpoins* expostos na porta 8080:
 
 ### ```/create-venda```
 
-Recebe requisição com o método **POST** para criar uma nova tupla de dados na tabela **vendas**. O **body** da requisição deve conter um objeto no seguinte formato:
+Recebe requisição com o método **POST** para criar uma nova tupla na tabela **vendas**. O **body** da requisição deve conter um objeto no seguinte formato:
 
 ```TypeScript
 {
@@ -34,3 +34,60 @@ Recebe requisição com o método **POST** para criar uma nova tupla de dados na
   vendas: number;
 }
 ```
+
+Em caso de sucesso, retorna status **201** e um objeto contendo os dados salvos com o id da nova tupla.
+
+### ```/update-venda/:id```
+
+Recebe requisição com o método **PUT** para atualizar um ou mais campos de uma tupla na tabela **vendas**. A requisição deve levar o id da tupla a ser atualizada em um *path parameter*, como no exemplo abaixo:
+
+```http://localhost:8080/update-venda/20```
+
+Além disso, a requisição deve conter um **body** com um objeto contendo os campos a serem atualizados e seus valores, como abaixo:
+
+```JSON
+{
+  "regiao:": "Sul",
+  "trimestre": "2020-4"
+}
+```
+
+Em caso de sucesso, retorna status **200** e um objeto contendo os dados atualizados.
+
+### ```/delete-venda/:id```
+
+Recebe requisição com método **DELETE** para excluir uma tupla da tabela **vendas**. A requisição deve levar o id da tupla a ser excluída em um *path parameter*, como no exemplo abaixo:
+
+```http://localhost:8080/delete-venda/20```
+
+Em caso de sucesso, retorna status **204**.
+
+### ```/monitor-func/:func```
+
+Recebe requisição com método **GET** para recuperar tuplas referentes a um funcionário. A requisição deve levar o nome do funcionário em um *path parameter*, como no exemplo abaixo:
+
+```http://localhost:8080/monitor-func/Jonas```
+
+Em caso de sucesso, retorna status **200** e um vetor contendo objetos correspondentes a todas as tuplas referentes ao funcionário selecionado.
+
+### ```/monitor-reg/:reg```
+
+Recebe requisição com método **GET** para recuperar tuplas referentes a uma região. A requisição deve levar o nome da região em um *path parameter*, como no exemplo abaixo:
+
+```http://localhost:8080/monitor-reg/Norte```
+
+Em caso de sucesso, retorna status **200** e um vetor contendo objetos correspondentes a todas as tuplas referentes à região selecionada.
+
+### ```/monitor-tri/:tri```
+
+Recebe requisição com método **GET** para recuperar tuplas referentes a um trimestre. A requisição deve levar o nome do trimestre em um *path parameter*, como no exemplo abaixo:
+
+```http://localhost:8080/monitor-tri/2021-3```
+
+Em caso de sucesso, retorna status **200** e um vetor contendo objetos correspondentes a todas as tuplas referentes ao trimestre selecionado.
+
+### ```/all```
+
+Recebe requisição com método **GET** para recuperar todas as tuplas da tabela **vendas**.
+
+Em caso de sucesso, retorna status **200** e um vetor contendo objetos correspondentes a todas as tuplas da tabela **vendas**.
