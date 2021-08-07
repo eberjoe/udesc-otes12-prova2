@@ -21,9 +21,9 @@
 
 Foram implementados os seguintes *endpoins* expostos na porta 8080:
 
-```/create-venda```
+### ```/create-venda```
 
-Recebe requisição com o método **POST** para criar uma nova tupla de dados na tabela **vendas**. O **body** deve conter um objeto no seguinte formato:
+Recebe requisição com o método **POST** para criar uma nova tupla de dados na tabela **vendas**. O **body** da requisição deve conter um objeto no seguinte formato:
 
 ```TypeScript
 {
